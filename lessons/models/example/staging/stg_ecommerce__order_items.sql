@@ -7,7 +7,7 @@ with source as (
 renamed as (
 
     select
-        id,
+        id as order_item_id,
         order_id,
         user_id,
         product_id,
@@ -17,7 +17,7 @@ renamed as (
         shipped_at,
         delivered_at,
         returned_at,
-        sale_price
+        sale_price as item_sale_price
 
     from source
 

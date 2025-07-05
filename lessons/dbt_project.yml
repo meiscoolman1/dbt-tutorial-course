@@ -32,3 +32,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   lessons:
     +materialized: table
+    +persist_docs: #Write column descriptions into bigquery
+      relation: true
+      columns: true
