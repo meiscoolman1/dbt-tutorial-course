@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_orders
+    description: ""
+    columns:
+      - name: order_id
+        description: ""
+
+      - name: order_created_at
+        description: ""
+
+      - name: order_shipped_at
+        description: ""
+
+      - name: order_delivered_at
+        description: ""
+
+      - name: order_returned_at
+        description: ""
+
+      - name: order_status
+        description: ""
+
+      - name: num_of_item
+        description: ""
+
+      - name: total_sale_price
+        description: ""
+
+      - name: total_product_cost
+        description: ""
+
+      - name: total_profit
+        description: ""
+
+      - name: total_discount
+        description: ""
