@@ -7,11 +7,12 @@ models:
       - name: order_id
         description: ""
         tests:
-          - unique
-          - not_null
+          - primary_key:
+              severity: error
 
       - name: user_id
-        description: ""
+        tests:
+          - not_null
 
       - name: status
         description: ""
@@ -29,13 +30,21 @@ models:
         description: ""
 
       - name: created_at
-        description: ""
+        test:
+          - not_null
 
       - name: returned_at
-        description: ""
+        tests:
+          - not_null:
+              where: "returned_at IS NOT NULL or status = 'Complete'"
+          - dbt_utils.expression_is_true:
+              expression: ">= shipped_at"
+              where: "delivered_at IS NOT NULL and shipped_at IS NOT NULL"
 
       - name: shipped_at
-        description: ""
+        tests:
+          - not_null:
+              where "delivered_at IS NOT NULL OR status = 'Shipped'"
 
       - name: delivered_at
         description: ""

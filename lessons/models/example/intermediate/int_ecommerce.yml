@@ -21,15 +21,11 @@ models:
         tests:
           - not_null:
               severity: error
-          - unique:
-              severity: error
 
       - name: product_id
         description: "Unique identifier for a product"
         tests:
           - not_null:
-              severity: error
-          - unique:
               severity: error
 
       - name: item_sale_price
