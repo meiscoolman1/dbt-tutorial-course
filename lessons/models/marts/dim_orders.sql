@@ -17,6 +17,7 @@ select
     -- Dimensions from staging orders table
 	od.order_id,
 	od.created_at AS order_created_at,
+	{{ is_weekend('od.created_at') }} as weekend_create_day,
 	od.shipped_at AS order_shipped_at,
 	od.delivered_at AS order_delivered_at,
 	od.returned_at AS order_returned_at,

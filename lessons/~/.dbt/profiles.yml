@@ -11,3 +11,16 @@ lessons:
       threads: 60
       type: bigquery
   target: dev
+
+  testing:
+      type: dbt_tyler_test
+      method: oauth
+      # To use this, first run (in your terminal): export BIGQUERY_PROJECT="your_project_name"
+      # Then dbt will recognise the variable
+      database: cedar-shard-464020-d6
+      schema: dbt_tyler # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 60 # Max number of concurrent things running at once
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+  target: dev
