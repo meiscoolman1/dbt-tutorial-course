@@ -16,7 +16,8 @@ models:
           - not_null:
               severity: error
 
-      - name: user_id
+      - &user_id
+        name: user_id
         description: "Unique identifier for a user"
         tests:
           - not_null:
@@ -45,3 +46,8 @@ models:
 
       - name: item_discount
         description: ""
+
+  - name: int_ecommerce__first_order_created
+    description: ""
+    columns:
+      - *user_id

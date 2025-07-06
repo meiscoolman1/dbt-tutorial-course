@@ -15,7 +15,7 @@ models:
           - not_null
 
       - name: status
-        description: ""
+        description: "{{ doc('status') }}"
         tests:
           - accepted_values:
               name: unexpected_order_status
@@ -44,7 +44,7 @@ models:
       - name: shipped_at
         tests:
           - not_null:
-              where "delivered_at IS NOT NULL OR status = 'Shipped'"
+              where: "delivered_at IS NOT NULL OR status = 'Shipped'"
 
       - name: delivered_at
         description: ""
